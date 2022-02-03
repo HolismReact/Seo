@@ -1,5 +1,5 @@
-import EntityParameters from './EntityParameters/List'
-import UpsertEntityParameter from './EntityParameters/Upsert'
+import EntityParameters from './EntityParameter/List'
+import UpsertEntityParameter from './EntityParameter/Upsert'
 import QueryParameters from './QueryParameter/List'
 import Snippets from './Snippet/List'
 

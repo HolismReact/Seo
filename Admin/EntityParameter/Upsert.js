@@ -5,7 +5,8 @@ import Inputs from '../ParameterObject/Inputs'
 const UpsertEntityParameter = () => {
 
     const { entityType, entityGuid } = app.parseQuery()
-    const [progress, setProgress] = useState()
+    const [entity, setEntity] = useState(null)
+    const [progress, setProgress] = useState(true)
 
     useEffect(() => {
         if (entityType && entityGuid) {
@@ -13,7 +14,7 @@ const UpsertEntityParameter = () => {
             get(`/entityParameter/getRecord?entityType=${entityType}&entityGuid=${entityGuid}`)
                 .then(data => {
                     app.emit(app.editRequested, { entity: data })
-                    setProgress(false)
+                    setEntity(data)
                 }, error => {
                     setProgress(false)
                     app.error(error)
@@ -21,8 +22,15 @@ const UpsertEntityParameter = () => {
         }
     }, [])
 
+    useEffect(() => {
+        if (entity) {
+            setProgress(false)
+        }
+    }, [entity])
+
     return progress ? <Progress /> : <Form
         entityType='EntityParameter'
+        entity={entity}
         inputs={Inputs}
     />
 }
