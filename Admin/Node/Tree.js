@@ -1,4 +1,4 @@
-import { Tree } from '@Tree'
+import { Tree } from '@List'
 
 const Nodes = () => {
     return <Tree
