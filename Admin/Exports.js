@@ -1,7 +1,6 @@
 import EntityParameters from './EntityParameter/List'
 import UpsertEntityParameter from './EntityParameter/Upsert'
 import QueryParameters from './QueryParameter/List'
-import Nodes from './Node/Tree'
 import Snippets from './Snippet/List'
 
 const routes = [
@@ -20,10 +19,6 @@ const routes = [
     {
         "path": "/snippets",
         "component": Snippets
-    },
-    {
-        "path": "/snippetNodes",
-        "component": Nodes
     }
 ]
 
