@@ -1,9 +1,10 @@
 import EntityParameters from './EntityParameter/List'
+import EntitySeo from './EntityParameter/ItemAction'
 import UpsertEntityParameter from './EntityParameter/Upsert'
 import QueryParameters from './QueryParameter/List'
 import Snippets from './Snippet/List'
 
-const routes = [
+const SeoRoutes = [
     {
         "path": "/entityParameters",
         "component": EntityParameters
@@ -22,4 +23,5 @@ const routes = [
     }
 ]
 
-export { routes as SeoRoutes } 
+export { SeoRoutes }
+export { EntitySeo }
